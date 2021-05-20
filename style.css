@@ -13,9 +13,76 @@ body
     min-height: 100vh;
     overflow-x: hidden;
     background: #fff;
+    scroll-behavior: smooth;
 }
 
-header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 10px 100px;
+    z-index: 10000;
+}
+
+header.sticky 
+{
+    padding: 5px 100px;
+    background: #2b1055;
+}
+header .logo
+{
+    position: relative;
+    font-weight: 700;
+    color: #ECE6CD;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    position: relative;
+    list-style: none;
+}
+
+header ul li a
+{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ECE6CD;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+header.sticky .logo,
+header.sticky ul li a 
+{
+    color: #ECE6CD;
+}
+
+header.sticky ul li a
+{
+    top: 10px;
+}
+
+/* header
 {
     position: absolute;
     top: 0;
@@ -36,9 +103,9 @@ header .logo
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
+} */
 
-header ul
+/* header ul
 {
     display: flex;
     justify-content: center;
@@ -64,7 +131,7 @@ header ul li a.active
 {
 background: #fff;
 color: #2b1055;
-}
+} */
 
 .hero 
 {
@@ -118,7 +185,7 @@ color: #2b1055;
 #text
 {
     position: absolute;
-    color: #fff;
+    color: #ECE6CD;
     left: -1000px;
     white-space: nowrap;
     font-size: 7.5vw;
@@ -132,7 +199,7 @@ color: #2b1055;
     display: inline-block;
     padding: 8px 30px;
     border-radius: 40px;
-    background: #fff;
+    background: #ECE6CD;
     color: #2b1055;
     font-size: 1.5em;
     z-index: 8;
@@ -140,7 +207,7 @@ color: #2b1055;
 }
 
 .jumbotron {
-    padding-top: 50px;
+    /* padding-top: 50px; */
     background-color: #fff;
 }
 
@@ -233,16 +300,18 @@ color: #2b1055;
     transform: scale(1.6);
 }
 
-.card-contact p{
+.card-contact a{
     margin-top: 20px;
     font-weight: 300;
     letter-spacing: 2px;
     max-height: 0;
     opacity: 0;
     transition: 0.3s linear;
+    text-decoration: none;
+    color: #fff;
 }
 
-.card-contact:hover p{
+.card-contact:hover a{
     max-height: 40px;
     opacity: 1;
 }
